@@ -4,8 +4,11 @@
     Ao final, o programa exibe os dados das duas cartas cadastradas.
 */
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main() {
+    // Declaração das variáveis para armazenar os dados das cidades
     char codigo_1[20], codigo_2[20];
     char nome_cidade_1[100], nome_cidade_2[100];
     char nome_estado_1[100], nome_estado_2[100];
@@ -14,56 +17,65 @@ int main() {
     float pib_1, pib_2;
     int pontos_turisticos_1, pontos_turisticos_2;
 
-    // coleta os dados da cidade 1
+    // Coleta os dados da cidade 1
 
     printf("Digite o estado da cidade 1: \n");
-    scanf(" %[^\n]", nome_estado_1);
+    fgets(nome_estado_1, sizeof(nome_estado_1), stdin); // Lê o nome do estado (permite espaços)
+    nome_estado_1[strcspn(nome_estado_1, "\n")] = 0;  // Remove a nova linha
 
     printf("Digite o código da cidade 1: \n");
-    scanf("%s", codigo_1);
+    fgets(codigo_1, sizeof(codigo_1), stdin); // Lê o código da cidade
+    codigo_1[strcspn(codigo_1, "\n")] = 0;  // Remove a nova linha
 
     printf("Digite o nome da cidade 1: \n");
-    scanf(" %[^\n]", nome_cidade_1);
+    fgets(nome_cidade_1, sizeof(nome_cidade_1), stdin); // Lê o nome da cidade (permite espaços)
+    nome_cidade_1[strcspn(nome_cidade_1, "\n")] = 0;  // Remove a nova linha
 
     printf("Digite a população da cidade 1: \n");
-    scanf("%d", &populacao_1);
+    scanf("%d", &populacao_1); // Lê a população (inteiro)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite a área da cidade 1: \n");
-    scanf("%f", &area_1);
+    scanf("%f", &area_1); // Lê a área (float)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite o PIB da cidade 1: \n");
-    scanf("%f", &pib_1);
+    scanf("%f", &pib_1); // Lê o PIB (float)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite a quantidade de pontos turísticos da cidade 1: \n");
-    scanf("%d", &pontos_turisticos_1);
+    scanf("%d", &pontos_turisticos_1); // Lê a quantidade de pontos turísticos (inteiro)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
-    // Feedback ao usuário de que os dados da carta 1 foram inseridos com sucesso
-    printf("\n\n");
-    printf("Dados da cidade 1 registrados com sucesso! \n");
-    printf("Digite agora os dados da cidade 2: \n\n");
-    
-    // coleta os dados da carta 2
+    // Coleta os dados da cidade 2
 
     printf("Digite o estado da cidade 2: \n");
-    scanf(" %[^\n]", nome_estado_2);
-    
+    fgets(nome_estado_2, sizeof(nome_estado_2), stdin); // Lê o nome do estado (permite espaços)
+    nome_estado_2[strcspn(nome_estado_2, "\n")] = 0;  // Remove a nova linha
+
     printf("Digite o código da cidade 2: \n");
-    scanf("%s", codigo_2);
+    fgets(codigo_2, sizeof(codigo_2), stdin); // Lê o código da cidade
+    codigo_2[strcspn(codigo_2, "\n")] = 0;  // Remove a nova linha
 
     printf("Digite o nome da cidade 2: \n");
-    scanf(" %[^\n]", nome_cidade_2);
+    fgets(nome_cidade_2, sizeof(nome_cidade_2), stdin); // Lê o nome da cidade (permite espaços)
+    nome_cidade_2[strcspn(nome_cidade_2, "\n")] = 0;  // Remove a nova linha
 
     printf("Digite a população da cidade 2: \n");
-    scanf("%d", &populacao_2);
+    scanf("%d", &populacao_2); // Lê a população (inteiro)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite a área da cidade 2: \n");
-    scanf("%f", &area_2);
+    scanf("%f", &area_2); // Lê a área (float)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite o PIB da cidade 2: \n");
-    scanf("%f", &pib_2);
+    scanf("%f", &pib_2); // Lê o PIB (float)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     printf("Digite a quantidade de pontos turísticos da cidade 2: \n");
-    scanf("%d", &pontos_turisticos_2);
+    scanf("%d", &pontos_turisticos_2); // Lê a quantidade de pontos turísticos (inteiro)
+    getchar(); // Consome o '\n' deixado pelo scanf
 
     // Imprime os dados das cartas
 
